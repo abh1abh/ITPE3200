@@ -342,3 +342,26 @@
 2025-10-13 20:39:48.976 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 107.9814ms
 2025-10-13 20:39:48.980 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
 2025-10-13 20:39:48.982 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 142.8714ms
+2025-10-13 20:50:37.749 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/image/chickenleg.jsp - null null
+2025-10-13 20:50:37.751 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/image/chickenleg.jsp - 404 0 null 2.6555ms
+2025-10-13 20:50:37.751 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/image/chickenleg.jsp, Response status code: 404
+2025-10-13 20:50:58.567 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/image/chickenleg.jpg - null null
+2025-10-13 20:50:58.568 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/image/chickenleg.jpg - 404 0 null 0.607ms
+2025-10-13 20:50:58.568 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/image/chickenleg.jpg, Response status code: 404
+2025-10-13 20:51:05.985 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/chickenleg.jpg - null null
+2025-10-13 20:51:05.986 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/chickenleg.jpg - 404 0 null 1.0997ms
+2025-10-13 20:51:05.986 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/chickenleg.jpg, Response status code: 404
+2025-10-13 20:51:10.376 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images7chickenleg.jpg - null null
+2025-10-13 20:51:10.376 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images7chickenleg.jpg - 404 0 null 0.3153ms
+2025-10-13 20:51:10.376 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/images7chickenleg.jpg, Response status code: 404
+2025-10-13 20:51:13.362 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/chickenleg.jpg - null null
+2025-10-13 20:51:13.362 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/chickenleg.jpg - 404 0 null 0.1768ms
+2025-10-13 20:51:13.362 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/images/chickenleg.jpg, Response status code: 404
+2025-10-13 21:01:52.242 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:01:52.274 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:01:52.275 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:01:52.276 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:01:52.294 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:01:52.295 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 18.6664ms
+2025-10-13 21:01:52.295 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:01:52.295 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 53.8719ms

@@ -1,0 +1,76 @@
+2025-10-13 21:04:54.504 +02:00 [INF] Now listening on: http://localhost:5217
+2025-10-13 21:04:54.509 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-13 21:04:54.509 +02:00 [INF] Hosting environment: Development
+2025-10-13 21:04:54.509 +02:00 [INF] Content root path: /Users/alexanderhoyskel/VSCode/ITPE3200/api
+2025-10-13 21:04:56.266 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:04:56.304 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:04:56.306 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:04:56.316 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:04:56.373 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:04:56.453 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:04:56.454 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 133.6049ms
+2025-10-13 21:04:56.454 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:04:56.455 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:04:56.455 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:04:56.455 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:04:56.461 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 196.521ms
+2025-10-13 21:04:56.513 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:04:56.514 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 57.852ms
+2025-10-13 21:04:56.514 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:04:56.515 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 60.6755ms
+2025-10-13 21:04:59.913 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:04:59.917 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:04:59.917 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:04:59.917 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:04:59.923 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:04:59.924 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 6.6279ms
+2025-10-13 21:04:59.924 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:04:59.925 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 11.5527ms
+2025-10-13 21:04:59.926 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:04:59.926 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:04:59.926 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:04:59.926 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:04:59.928 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:04:59.929 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 2.525ms
+2025-10-13 21:04:59.929 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:04:59.929 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 3.2147ms
+2025-10-13 21:08:16.913 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:08:16.920 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:08:16.920 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:08:16.922 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:08:16.930 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:08:16.931 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 8.9723ms
+2025-10-13 21:08:16.931 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:08:16.931 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 19.408ms
+2025-10-13 21:08:16.932 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:08:16.933 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:08:16.933 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:08:16.933 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:08:16.934 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:08:16.934 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 1.2317ms
+2025-10-13 21:08:16.934 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:08:16.934 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 2.083ms
+2025-10-13 21:11:05.647 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:11:05.651 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:11:05.653 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:11:05.657 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:11:05.671 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:11:05.671 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 14.3985ms
+2025-10-13 21:11:05.672 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:11:05.672 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 25.6019ms
+2025-10-13 21:16:07.164 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:16:07.179 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:16:07.179 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:16:07.180 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:16:07.190 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:16:07.190 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 10.2712ms
+2025-10-13 21:16:07.190 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:16:07.191 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 30.4452ms
+2025-10-13 21:16:07.191 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-13 21:16:07.191 +02:00 [INF] CORS policy execution successful.
+2025-10-13 21:16:07.191 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:16:07.192 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-13 21:16:07.192 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 21:16:07.192 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 0.7123ms
+2025-10-13 21:16:07.192 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-13 21:16:07.192 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1544 application/json; charset=utf-8 0.9916ms
