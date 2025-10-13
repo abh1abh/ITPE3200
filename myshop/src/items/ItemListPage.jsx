@@ -1,31 +1,44 @@
-import React from "react";
-import { Table } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Button, Table } from "react-bootstrap";
+
+const API_URL = "http://localhost:5217";
 
 const ItemListPage = () => {
-  // Mock data
-  const items = [
-    {
-      ItemId: 1,
-      Name: "Fried Chicken Leg",
-      Price: 20,
-      Description:
-        "Crispy and succulent chicken leg that is deep-fried to perfection, often served as a popular fast food item.",
-      ImageUrl: "/images/chickenleg.jpg",
-    },
-    {
-      ItemId: 2,
-      Name: "Fish and Chips",
-      Price: 180,
-      Description:
-        "Classic British dish featuring battered and deep-fried fish served with thick-cut fried potatoes.",
-      ImageUrl: "/images/fishandchips.jpg",
-    },
-  ];
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchItems = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(`${API_URL}/api/itemapi/itemlist`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setItems(data);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching items:", error.message);
+      setError("Failed to fetch items. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
 
   return (
     <div>
       <h1>Items</h1>
-      <Table>
+      <Button onClick={fetchItems} disabled={loading}>
+        {loading ? "Loading..." : "Refresh"}
+      </Button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>ItemId</th>
@@ -37,13 +50,13 @@ const ItemListPage = () => {
         </thead>
         <tbody>
           {items.map((item) => (
-            <tr key={item.ItemId}>
-              <td>{item.ItemId}</td>
-              <td>{item.Name}</td>
-              <td>{item.Price}</td>
-              <td>{item.Description}</td>
+            <tr key={item.itemId}>
+              <td>{item.itemId}</td>
+              <td>{item.name}</td>
+              <td>{item.price} NOK</td>
+              <td>{item.description}</td>
               <td>
-                <img src={item.ImageUrl} alt={item.Name} width="120" />
+                <img src={`${item.imageUrl}`} alt={item.name} width="120" />
               </td>
             </tr>
           ))}
