@@ -1,2 +1,0 @@
-2025-10-20 16:00:16.322 +02:00 [INF] Applying migration '20251020134515_InitialAuthDb'.
-2025-10-20 16:00:16.344 +02:00 [INF] Applying migration '20251020140008_InitAuth'.

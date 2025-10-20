@@ -1,9 +1,0 @@
-2025-10-20 15:47:32.625 +02:00 [INF] User profile is available. Using '/Users/alexanderhoyskel/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2025-10-20 15:47:32.670 +02:00 [INF] Now listening on: http://localhost:5217
-2025-10-20 15:47:32.673 +02:00 [INF] Application started. Press Ctrl+C to shut down.
-2025-10-20 15:47:32.673 +02:00 [INF] Hosting environment: Development
-2025-10-20 15:47:32.674 +02:00 [INF] Content root path: /Users/alexanderhoyskel/VSCode/ITPE3200/api
-2025-10-20 15:47:33.453 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/index.html - null null
-2025-10-20 15:47:33.494 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/index.html - 200 null text/html;charset=utf-8 42.0107ms
-2025-10-20 15:47:33.811 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/v1/swagger.json - null null
-2025-10-20 15:47:33.866 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.0535ms

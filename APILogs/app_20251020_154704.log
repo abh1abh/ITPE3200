@@ -1,4 +1,0 @@
-2025-10-20 15:47:04.769 +02:00 [INF] Applying migration '20251020134515_InitialAuthDb'.
-2025-10-20 15:47:04.789 +02:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
-INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20251020134515_InitialAuthDb', '8.0.8');
