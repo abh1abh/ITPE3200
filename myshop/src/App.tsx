@@ -1,23 +1,26 @@
 import "./App.css";
 import HomePage from "./home/HomePage";
-import { BrowserRouter, Navigate, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 import ItemListPage from "./items/ItemListPage";
 import { Container } from "react-bootstrap";
 import NavMenu from "./shared/NavMenu";
+import React from "react";
+import ItemCreatePage from "./items/ItemCreatePage";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <NavMenu />
       <Container>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/items" element={<ItemListPage />} />
+          <Route path="/itemcreate" element={<ItemCreatePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Container>
-    </BrowserRouter>
+    </Router>
   );
-}
+};
 
 export default App;

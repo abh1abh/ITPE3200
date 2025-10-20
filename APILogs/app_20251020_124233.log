@@ -1,0 +1,12 @@
+2025-10-20 12:42:34.878 +02:00 [INF] Now listening on: http://localhost:5217
+2025-10-20 12:42:34.891 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-20 12:42:34.891 +02:00 [INF] Hosting environment: Development
+2025-10-20 12:42:34.891 +02:00 [INF] Content root path: /Users/alexanderhoyskel/VSCode/ITPE3200/api
+2025-10-20 12:42:46.251 +02:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5217/api/itemapi/create - null null
+2025-10-20 12:42:46.267 +02:00 [INF] CORS policy execution successful.
+2025-10-20 12:42:46.272 +02:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5217/api/itemapi/create - 204 null null 21.9546ms
+2025-10-20 12:42:46.273 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5217/api/itemapi/create - application/json 83
+2025-10-20 12:42:46.274 +02:00 [INF] CORS policy execution successful.
+2025-10-20 12:42:46.274 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5217/api/itemapi/create - 404 0 null 1.5021ms
+2025-10-20 12:42:46.275 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5217/api/itemapi/create, Response status code: 404
+2025-10-20 12:45:19.391 +02:00 [INF] Application is shutting down...

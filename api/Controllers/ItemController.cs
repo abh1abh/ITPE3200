@@ -38,9 +38,33 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
             Description = item.Description,
             ImageUrl = item.ImageUrl
         });
-               
+
         return Ok(items);
     }
+    
+    [HttpPost ("create")]
+    public async Task<IActionResult> Create([FromBody] ItemDTO itemDTO)
+    {
+        if (itemDTO == null)
+        {
+            _logger.LogWarning("[ItemAPIController] Received null ItemDTO in Create method");
+            return BadRequest("Item data is required");
+        }
+        var item = new Item
+        {
+            Name = itemDTO.Name,
+            Price = itemDTO.Price,
+            Description = itemDTO.Description,
+            ImageUrl = itemDTO.ImageUrl
+        };
+        bool returnOk = await _itemRepository.Create(item);
+        if (returnOk)
+            return CreatedAtAction(nameof(ItemList), new { id = item.ItemId }, item);
+        
+        _logger.LogWarning("[ItemAPIController] Item creation failed {@item}", item);
+        return StatusCode(500, "Item creation failed");
+    }
+
 
 }
 
@@ -90,15 +114,15 @@ public class ItemController : Controller
         return View(item);
     }
 
-    [HttpGet]
-    [Authorize]
+    [HttpGet()]
+    // [Authorize]
     public IActionResult Create()
     {
         return View();
     }
 
-    [HttpPost]
-    [Authorize]
+    [HttpPost ("create")]
+    // [Authorize]
     public async Task<IActionResult> Create(Item item)
     {
         if (ModelState.IsValid)

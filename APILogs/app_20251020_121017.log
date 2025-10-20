@@ -1,0 +1,14 @@
+2025-10-20 12:10:19.203 +02:00 [INF] Now listening on: http://localhost:5217
+2025-10-20 12:10:19.211 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-20 12:10:19.211 +02:00 [INF] Hosting environment: Development
+2025-10-20 12:10:19.211 +02:00 [INF] Content root path: /Users/alexanderhoyskel/VSCode/ITPE3200/api
+2025-10-20 12:10:22.988 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/tacos.jpg - null null
+2025-10-20 12:10:22.988 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/pizza.jpg - null null
+2025-10-20 12:10:22.988 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/fishandchips.jpg - null null
+2025-10-20 12:10:23.027 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/fishandchips.jpg - 404 0 null 39.6153ms
+2025-10-20 12:10:23.027 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/pizza.jpg - 404 0 null 39.6091ms
+2025-10-20 12:10:23.027 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/tacos.jpg - 404 0 null 39.614ms
+2025-10-20 12:10:23.031 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/images/pizza.jpg, Response status code: 404
+2025-10-20 12:10:23.031 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/images/fishandchips.jpg, Response status code: 404
+2025-10-20 12:10:23.031 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/images/tacos.jpg, Response status code: 404
+2025-10-20 12:13:11.164 +02:00 [INF] Application is shutting down...

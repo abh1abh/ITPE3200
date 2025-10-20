@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import { Button, Form, Table } from "react-bootstrap";
 import ItemTable from "./ItemTable";
 import ItemGrid from "./ItemGrid";
+import { Item } from "../types/items";
 
-const API_URL = "http://localhost:5217";
+// const API_URL = "http://localhost:5217";
+const API_URL = import.meta.env.VITE_API_URL;
 
-const ItemListPage = () => {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [showTable, setShowTable] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("");
+const ItemListPage: React.FC = () => {
+  const [items, setItems] = useState<Item[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [showTable, setShowTable] = useState<boolean>(true);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const toggleTableOrGrid = () => setShowTable((prevShowTable) => !prevShowTable);
 
@@ -22,11 +24,15 @@ const ItemListPage = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      const data = await response.json();
+      const data: Item[] = await response.json();
       setItems(data);
       console.log(data);
-    } catch (error) {
-      console.error("Error fetching items:", error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Error fetching items:", error.message);
+      } else {
+        console.error("Unknown error ", error);
+      }
       setError("Failed to fetch items. Please try again later.");
     } finally {
       setLoading(false);
@@ -66,6 +72,9 @@ const ItemListPage = () => {
       ) : (
         <ItemGrid items={filteredItems} apiUrl={API_URL} />
       )}
+      <Button href="/itemcreate" className="btn btn-secondary mb-3">
+        Add new Item
+      </Button>
     </div>
   );
 };

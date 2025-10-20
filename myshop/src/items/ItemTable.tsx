@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { Button, Table } from "react-bootstrap";
+import { Item } from "../types/items";
 
-const ItemTable = ({ items, apiUrl }) => {
-  const [showImage, setShowImage] = useState(true);
-  const [showDescription, setShowDescription] = useState(true);
+interface ItemTableProps {
+  items: Item[];
+  apiUrl: string;
+}
+
+const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
+  const [showImage, setShowImage] = useState<boolean>(true);
+  const [showDescription, setShowDescription] = useState<boolean>(true);
 
   const toggleImage = () => setShowImage((prevShowImage) => !prevShowImage);
   const toggleDescription = () => setShowDescription((prevShowDescription) => !prevShowDescription);
@@ -35,7 +41,18 @@ const ItemTable = ({ items, apiUrl }) => {
               {showDescription && <td>{item.description}</td>}
               {showImage && (
                 <td>
-                  <img src={`${item.imageUrl}`} alt={item.name} width="120" />
+                  {item.imageUrl ? (
+                    <img
+                      src={`${apiUrl}${item.imageUrl}`}
+                      alt={item.name}
+                      width="120"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  ) : (
+                    <span>No Image</span>
+                  )}
                 </td>
               )}
             </tr>
