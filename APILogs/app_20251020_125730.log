@@ -88,3 +88,47 @@
 2025-10-20 12:58:55.089 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/swagger-ui.css - 200 143943 text/css 18.4847ms
 2025-10-20 12:58:55.173 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/v1/swagger.json - null null
 2025-10-20 12:58:55.234 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.2327ms
+2025-10-20 13:05:48.502 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-20 13:05:48.541 +02:00 [INF] CORS policy execution successful.
+2025-10-20 13:05:48.543 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-20 13:05:48.550 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-20 13:05:48.624 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-20 13:05:48.632 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 82.317ms
+2025-10-20 13:05:48.633 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-20 13:05:48.637 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1721 application/json; charset=utf-8 135.6743ms
+2025-10-20 13:05:48.639 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - null null
+2025-10-20 13:05:48.639 +02:00 [INF] CORS policy execution successful.
+2025-10-20 13:05:48.639 +02:00 [INF] Executing endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-20 13:05:48.641 +02:00 [INF] Route matched with {action = "ItemList", controller = "ItemAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ItemList() on controller MyShop.Controllers.ItemAPIController (api).
+2025-10-20 13:05:48.646 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyShop.Models.Item, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-20 13:05:48.646 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.ItemList (api) in 5.2985ms
+2025-10-20 13:05:48.647 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.ItemList (api)'
+2025-10-20 13:05:48.647 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/api/itemapi/itemlist - 200 1721 application/json; charset=utf-8 7.5895ms
+2025-10-20 13:05:48.676 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/chickenleg.jpg - null null
+2025-10-20 13:05:48.676 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/pizza.jpg - null null
+2025-10-20 13:05:48.676 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/frenchfries.jpg - null null
+2025-10-20 13:05:48.729 +02:00 [INF] The file /images/frenchfries.jpg was not modified
+2025-10-20 13:05:48.729 +02:00 [INF] The file /images/pizza.jpg was not modified
+2025-10-20 13:05:48.729 +02:00 [INF] The file /images/chickenleg.jpg was not modified
+2025-10-20 13:05:48.729 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/pizza.jpg - 304 null image/jpeg 53.4398ms
+2025-10-20 13:05:48.729 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/chickenleg.jpg - 304 null image/jpeg 53.7565ms
+2025-10-20 13:05:48.729 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/frenchfries.jpg - 304 null image/jpeg 53.4021ms
+2025-10-20 13:05:48.736 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/fishandchips.jpg - null null
+2025-10-20 13:05:48.736 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/ribs.jpg - null null
+2025-10-20 13:05:48.736 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/tacos.jpg - null null
+2025-10-20 13:05:48.737 +02:00 [INF] The file /images/ribs.jpg was not modified
+2025-10-20 13:05:48.737 +02:00 [INF] The file /images/fishandchips.jpg was not modified
+2025-10-20 13:05:48.737 +02:00 [INF] The file /images/tacos.jpg was not modified
+2025-10-20 13:05:48.737 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/fishandchips.jpg - 304 null image/jpeg 0.4577ms
+2025-10-20 13:05:48.737 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/ribs.jpg - 304 null image/jpeg 0.4754ms
+2025-10-20 13:05:48.737 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/tacos.jpg - 304 null image/jpeg 0.4827ms
+2025-10-20 13:05:48.741 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/image/bread.jpeg - null null
+2025-10-20 13:05:48.742 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/cider.jpg - null null
+2025-10-20 13:05:48.742 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/coke.jpg - null null
+2025-10-20 13:05:48.742 +02:00 [INF] The file /images/coke.jpg was not modified
+2025-10-20 13:05:48.742 +02:00 [INF] The file /images/cider.jpg was not modified
+2025-10-20 13:05:48.742 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/coke.jpg - 304 null image/jpeg 0.2284ms
+2025-10-20 13:05:48.742 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/cider.jpg - 304 null image/jpeg 0.301ms
+2025-10-20 13:05:48.742 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/image/bread.jpeg - 404 0 null 1.6427ms
+2025-10-20 13:05:48.743 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/image/bread.jpeg, Response status code: 404
+2025-10-20 13:21:29.706 +02:00 [INF] Application is shutting down...

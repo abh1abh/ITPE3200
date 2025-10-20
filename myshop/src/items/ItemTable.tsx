@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import { Item } from "../types/items";
+import { Link } from "react-router-dom";
 
 interface ItemTableProps {
   items: Item[];
   apiUrl: string;
+  onItemDeleted: (itemId: number) => void;
 }
 
-const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
+const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted }) => {
   const [showImage, setShowImage] = useState<boolean>(true);
   const [showDescription, setShowDescription] = useState<boolean>(true);
 
@@ -30,6 +32,7 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
             <th>Price</th>
             {showDescription && <th>Description</th>}
             {showImage && <th>Image</th>}
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -55,6 +58,12 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl }) => {
                   )}
                 </td>
               )}
+              <td className="text-center">
+                <Link to={`/items/update/${item.itemId}`}>Update</Link>
+                <Link to="#" onClick={(event) => onItemDeleted(item.itemId!)}>
+                  Delete
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>

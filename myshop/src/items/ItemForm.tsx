@@ -6,13 +6,15 @@ import { Button, Form } from "react-bootstrap";
 interface ItemFormProps {
   onItemChanged: (item: Item) => void;
   itemId?: number;
+  isUpdating?: boolean;
+  initialData?: Item;
 }
 
-const ItemForm: React.FC<ItemFormProps> = ({ onItemChanged, itemId }) => {
-  const [name, setName] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [price, setPrice] = useState<number>(0);
-  const [imageUrl, setImageUrl] = useState<string>("");
+const ItemForm: React.FC<ItemFormProps> = ({ onItemChanged, itemId, isUpdating = false, initialData }) => {
+  const [name, setName] = useState<string>(initialData?.name || "");
+  const [description, setDescription] = useState<string>(initialData?.description || "");
+  const [price, setPrice] = useState<number>(initialData?.price || 0);
+  const [imageUrl, setImageUrl] = useState<string>(initialData?.imageUrl || "");
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -79,7 +81,7 @@ const ItemForm: React.FC<ItemFormProps> = ({ onItemChanged, itemId }) => {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <Button variant="primary" type="submit">
-        Create Item
+        {isUpdating ? "Update Item" : "Create Item"}
       </Button>
       <Button variant="secondary" onClick={onCancel} className="ms-2">
         Cancel

@@ -41,8 +41,8 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
 
         return Ok(items);
     }
-    
-    [HttpPost ("create")]
+
+    [HttpPost("create")]
     public async Task<IActionResult> Create([FromBody] ItemDTO itemDTO)
     {
         if (itemDTO == null)
@@ -60,11 +60,69 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
         bool returnOk = await _itemRepository.Create(item);
         if (returnOk)
             return CreatedAtAction(nameof(ItemList), new { id = item.ItemId }, item);
-        
+
         _logger.LogWarning("[ItemAPIController] Item creation failed {@item}", item);
         return StatusCode(500, "Item creation failed");
     }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetItemById(int id)
+    {
+        var item = await _itemRepository.GetItemById(id);
+        if (item == null)
+        {
+            _logger.LogWarning("[ItemAPIController] Item not found for the ItemId {ItemId:0000}", id);
+            return NotFound("Item not found for the ItemId");
+        }
+        return Ok(item);   
+    }
+
+    [HttpPut("update/{id}")]
+    public async Task<IActionResult> Update(int id, [FromBody] ItemDTO itemDTO)
+    {
+        if (itemDTO == null)
+        {
+            _logger.LogWarning("[ItemAPIController] Received null ItemDTO in Update method");
+            return BadRequest("Item data is required");
+        }
+
+        var existingItem = await _itemRepository.GetItemById(id);
+        if (existingItem == null)
+        {
+            _logger.LogWarning("[ItemAPIController] Item not found when updating the ItemId {ItemId:0000}", id);
+            return NotFound("Item not found for the ItemId");
+        }
+
+        existingItem.Name = itemDTO.Name;
+        existingItem.Price = itemDTO.Price;
+        existingItem.Description = itemDTO.Description;
+        existingItem.ImageUrl = itemDTO.ImageUrl;
+
+        bool updateSuccessful = await _itemRepository.Update(existingItem);
+        if (updateSuccessful)
+            return Ok(existingItem);
+
+        _logger.LogWarning("[ItemAPIController] Item update failed {@item}", existingItem);
+        return StatusCode(500, "Item update failed");
+    }
+    
+    [HttpDelete("delete/{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var existingItem = await _itemRepository.GetItemById(id);
+        if (existingItem == null)
+        {
+            _logger.LogWarning("[ItemAPIController] Item not found when deleting the ItemId {ItemId:0000}", id);
+            return NotFound("Item not found for the ItemId");
+        }
+
+        bool deleteSuccessful = await _itemRepository.Delete(id);
+        if (deleteSuccessful)
+            return NoContent();
+
+        _logger.LogWarning("[ItemAPIController] Item deletion failed {@item}", existingItem);
+        return StatusCode(500, "Item deletion failed");
+    }
 
 }
 

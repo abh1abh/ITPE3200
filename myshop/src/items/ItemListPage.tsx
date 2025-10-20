@@ -40,14 +40,44 @@ const ItemListPage: React.FC = () => {
   };
 
   useEffect(() => {
+    const saveViewMode = localStorage.getItem("itemViewMode");
+    console.log("Saved view mode:", saveViewMode);
+    if (saveViewMode) {
+      if (saveViewMode === "grid") setShowTable(false);
+      console.log("Show table:", showTable);
+    }
     fetchItems();
   }, []);
+
+  useEffect(() => {
+    const viewMode = showTable ? "table" : "grid";
+    localStorage.setItem("itemViewMode", viewMode);
+    console.log("View mode saved:", viewMode);
+  }, [showTable]);
 
   const filteredItems = items.filter(
     (item) =>
       item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleItemDeleted = async (itemId: number) => {
+    try {
+      const response = await fetch(`${API_URL}/api/itemapi/delete/${itemId}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      setItems((prevItems) => prevItems.filter((item) => item.itemId !== itemId));
+      console.log(`Item with ID ${itemId} deleted.`);
+      // Refresh the item list after deletion
+      // fetchItems();
+    } catch (error) {
+      console.error("Error deleting item:", error);
+      setError("Failed to delete item. Please try again later.");
+    }
+  };
 
   return (
     <div>
@@ -68,9 +98,9 @@ const ItemListPage: React.FC = () => {
       </Form.Group>
       {error && <p style={{ color: "red" }}>{error}</p>}
       {showTable ? (
-        <ItemTable items={filteredItems} apiUrl={API_URL} />
+        <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
       ) : (
-        <ItemGrid items={filteredItems} apiUrl={API_URL} />
+        <ItemGrid items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
       )}
       <Button href="/itemcreate" className="btn btn-secondary mb-3">
         Add new Item
