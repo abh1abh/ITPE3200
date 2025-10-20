@@ -30,7 +30,7 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
             _logger.LogError("[ItemAPIController] Item list not found while executing _itemRepository.GetAll()");
             return NotFound("Item list not found");
         }
-        var ItemDtos = items.Select(item => new ItemDTO
+        var itemDtos = items.Select(item => new ItemDto
         {
             ItemId = item.ItemId,
             Name = item.Name,
@@ -42,20 +42,21 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
         return Ok(items);
     }
 
+    [Authorize]
     [HttpPost("create")]
-    public async Task<IActionResult> Create([FromBody] ItemDTO itemDTO)
+    public async Task<IActionResult> Create([FromBody] ItemDto itemDto)
     {
-        if (itemDTO == null)
+        if (itemDto == null)
         {
-            _logger.LogWarning("[ItemAPIController] Received null ItemDTO in Create method");
+            _logger.LogWarning("[ItemAPIController] Received null ItemDto in Create method");
             return BadRequest("Item data is required");
         }
         var item = new Item
         {
-            Name = itemDTO.Name,
-            Price = itemDTO.Price,
-            Description = itemDTO.Description,
-            ImageUrl = itemDTO.ImageUrl
+            Name = itemDto.Name,
+            Price = itemDto.Price,
+            Description = itemDto.Description,
+            ImageUrl = itemDto.ImageUrl
         };
         bool returnOk = await _itemRepository.Create(item);
         if (returnOk)
@@ -76,13 +77,13 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
         }
         return Ok(item);   
     }
-
+    [Authorize]
     [HttpPut("update/{id}")]
-    public async Task<IActionResult> Update(int id, [FromBody] ItemDTO itemDTO)
+    public async Task<IActionResult> Update(int id, [FromBody] ItemDto itemDto)
     {
-        if (itemDTO == null)
+        if (itemDto == null)
         {
-            _logger.LogWarning("[ItemAPIController] Received null ItemDTO in Update method");
+            _logger.LogWarning("[ItemAPIController] Received null ItemDto in Update method");
             return BadRequest("Item data is required");
         }
 
@@ -93,10 +94,10 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
             return NotFound("Item not found for the ItemId");
         }
 
-        existingItem.Name = itemDTO.Name;
-        existingItem.Price = itemDTO.Price;
-        existingItem.Description = itemDTO.Description;
-        existingItem.ImageUrl = itemDTO.ImageUrl;
+        existingItem.Name = itemDto.Name;
+        existingItem.Price = itemDto.Price;
+        existingItem.Description = itemDto.Description;
+        existingItem.ImageUrl = itemDto.ImageUrl;
 
         bool updateSuccessful = await _itemRepository.Update(existingItem);
         if (updateSuccessful)
@@ -105,7 +106,8 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
         _logger.LogWarning("[ItemAPIController] Item update failed {@item}", existingItem);
         return StatusCode(500, "Item update failed");
     }
-    
+
+    [Authorize]
     [HttpDelete("delete/{id}")]
     public async Task<IActionResult> Delete(int id)
     {
@@ -179,7 +181,7 @@ public class ItemController : Controller
         return View();
     }
 
-    [HttpPost ("create")]
+    [HttpPost]
     // [Authorize]
     public async Task<IActionResult> Create(Item item)
     {

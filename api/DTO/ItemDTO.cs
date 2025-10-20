@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyShop.DTO
 {
-    public class ItemDTO
+    public class ItemDto
     {
         public int ItemId { get; set; }
 
