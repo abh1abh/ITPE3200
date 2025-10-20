@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Item } from "../types/items";
 import ItemForm from "./ItemForm";
 const API_URL = import.meta.env.VITE_API_URL;
+import * as ItemService from "./ItemService";
 
 const ItemUpdatePage: React.FC = () => {
   const { itemId } = useParams<{ itemId: string }>();
@@ -15,11 +16,7 @@ const ItemUpdatePage: React.FC = () => {
     const fetchItem = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`${API_URL}/api/itemapi/${itemId}`);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data: Item = await response.json();
+        const data = await ItemService.fetchItemById(itemId!);
         setItem(data);
       } catch (error) {
         setError("Failed to fetch item. Please try again later.");
@@ -33,17 +30,7 @@ const ItemUpdatePage: React.FC = () => {
 
   const handleItemUpdate = async (updatedItem: Item) => {
     try {
-      const response = await fetch(`${API_URL}/api/itemapi/update/${itemId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedItem),
-      });
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
+      const data = await ItemService.updateItem(Number(itemId), updatedItem);
       console.log("Item updated:", data);
       navigate("/items"); // Navigate back to the item list page after update
     } catch (error) {

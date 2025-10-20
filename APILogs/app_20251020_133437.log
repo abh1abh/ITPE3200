@@ -75,3 +75,12 @@
 2025-10-20 13:34:55.993 +02:00 [INF] Executed action MyShop.Controllers.ItemAPIController.Delete (api) in 11.3615ms
 2025-10-20 13:34:55.993 +02:00 [INF] Executed endpoint 'MyShop.Controllers.ItemAPIController.Delete (api)'
 2025-10-20 13:34:55.993 +02:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5217/api/itemapi/delete/1 - 204 null null 12.5125ms
+2025-10-20 13:58:01.126 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/fishandchips.jpg - null null
+2025-10-20 13:58:01.126 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/pizza.jpg - null null
+2025-10-20 13:58:01.126 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5217/images/tacos.jpg - null null
+2025-10-20 13:58:01.184 +02:00 [INF] The file /images/pizza.jpg was not modified
+2025-10-20 13:58:01.184 +02:00 [INF] The file /images/tacos.jpg was not modified
+2025-10-20 13:58:01.184 +02:00 [INF] The file /images/fishandchips.jpg was not modified
+2025-10-20 13:58:01.190 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/fishandchips.jpg - 304 null image/jpeg 65.0892ms
+2025-10-20 13:58:01.190 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/pizza.jpg - 304 null image/jpeg 65.0839ms
+2025-10-20 13:58:01.190 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5217/images/tacos.jpg - 304 null image/jpeg 65.104ms

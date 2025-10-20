@@ -3,8 +3,7 @@ import { Button, Form, Table } from "react-bootstrap";
 import ItemTable from "./ItemTable";
 import ItemGrid from "./ItemGrid";
 import { Item } from "../types/items";
-
-// const API_URL = "http://localhost:5217";
+import * as ItemService from "./ItemService";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const ItemListPage: React.FC = () => {
@@ -20,11 +19,7 @@ const ItemListPage: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${API_URL}/api/itemapi/itemlist`);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data: Item[] = await response.json();
+      const data = await ItemService.fetchItems();
       setItems(data);
       console.log(data);
     } catch (error: unknown) {
@@ -63,12 +58,7 @@ const ItemListPage: React.FC = () => {
 
   const handleItemDeleted = async (itemId: number) => {
     try {
-      const response = await fetch(`${API_URL}/api/itemapi/delete/${itemId}`, {
-        method: "DELETE",
-      });
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      await ItemService.deleteItem(itemId);
       setItems((prevItems) => prevItems.filter((item) => item.itemId !== itemId));
       console.log(`Item with ID ${itemId} deleted.`);
       // Refresh the item list after deletion
