@@ -4,6 +4,7 @@ import ItemTable from "./ItemTable";
 import ItemGrid from "./ItemGrid";
 import { Item } from "../types/items";
 import * as ItemService from "./ItemService";
+import { useAuth } from "../auth/AuthContext";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const ItemListPage: React.FC = () => {
@@ -12,6 +13,7 @@ const ItemListPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [showTable, setShowTable] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const { user } = useAuth();
 
   const toggleTableOrGrid = () => setShowTable((prevShowTable) => !prevShowTable);
 
@@ -88,13 +90,15 @@ const ItemListPage: React.FC = () => {
       </Form.Group>
       {error && <p style={{ color: "red" }}>{error}</p>}
       {showTable ? (
-        <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
+        <ItemTable items={filteredItems} apiUrl={API_URL} onItemDeleted={user ? handleItemDeleted : undefined} />
       ) : (
-        <ItemGrid items={filteredItems} apiUrl={API_URL} onItemDeleted={handleItemDeleted} />
+        <ItemGrid items={filteredItems} apiUrl={API_URL} onItemDeleted={user ? handleItemDeleted : undefined} />
       )}
-      <Button href="/itemcreate" className="btn btn-secondary mb-3">
-        Add new Item
-      </Button>
+      {user && (
+        <Button href="/itemcreate" className="btn btn-secondary mb-3">
+          Add new Item
+        </Button>
+      )}
     </div>
   );
 };

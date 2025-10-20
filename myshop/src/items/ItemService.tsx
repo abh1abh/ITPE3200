@@ -2,8 +2,15 @@ import { Item } from "../types/items";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const headers = {
-  "Content-Type": "application/json",
+const getAuthHeaders = () => {
+  const token = localStorage.getItem("token");
+  const headers: HeadersInit = {
+    "Content-Type": "application/json",
+  };
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
+  return headers;
 };
 const handleResponse = async (response: Response) => {
   if (response.ok) {
@@ -31,7 +38,7 @@ export const fetchItemById = async (itemId: string) => {
 export const createItem = async (item: Item) => {
   const response = await fetch(`${API_URL}/api/itemapi/create`, {
     method: "POST",
-    headers,
+    headers: getAuthHeaders(),
     body: JSON.stringify(item),
   });
   return handleResponse(response);
@@ -40,7 +47,7 @@ export const createItem = async (item: Item) => {
 export const updateItem = async (itemId: number, item: Item) => {
   const response = await fetch(`${API_URL}/api/itemapi/update/${itemId}`, {
     method: "PUT",
-    headers,
+    headers: getAuthHeaders(),
     body: JSON.stringify(item),
   });
   return handleResponse(response);
@@ -49,6 +56,7 @@ export const updateItem = async (itemId: number, item: Item) => {
 export const deleteItem = async (itemId: number) => {
   const response = await fetch(`${API_URL}/api/itemapi/delete/${itemId}`, {
     method: "DELETE",
+    headers: getAuthHeaders(),
   });
   return handleResponse(response);
 };

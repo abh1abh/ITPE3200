@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import AuthSection from "../auth/AuthSection";
 
 const NavMenu: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const NavMenu: React.FC = () => {
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
         </NavDropdown>
       </Nav>
+      <AuthSection />
     </Navbar>
   );
 };

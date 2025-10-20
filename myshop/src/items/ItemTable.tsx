@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 interface ItemTableProps {
   items: Item[];
   apiUrl: string;
-  onItemDeleted: (itemId: number) => void;
+  onItemDeleted?: (itemId: number) => void;
 }
 
 const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted }) => {
@@ -59,10 +59,14 @@ const ItemTable: React.FC<ItemTableProps> = ({ items, apiUrl, onItemDeleted }) =
                 </td>
               )}
               <td className="text-center">
-                <Link to={`/items/update/${item.itemId}`}>Update</Link>
-                <Link to="#" onClick={(event) => onItemDeleted(item.itemId!)}>
-                  Delete
-                </Link>
+                {onItemDeleted && (
+                  <>
+                    <Link to={`/items/update/${item.itemId}`}>Update</Link>
+                    <Link to="#" onClick={() => onItemDeleted(item.itemId!)}>
+                      Delete
+                    </Link>
+                  </>
+                )}
               </td>
             </tr>
           ))}

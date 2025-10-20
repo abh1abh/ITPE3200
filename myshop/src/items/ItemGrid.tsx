@@ -5,7 +5,7 @@ import { Item } from "../types/items";
 interface ItemGridProps {
   items: Item[];
   apiUrl: string;
-  onItemDeleted: (itemId: number) => void;
+  onItemDeleted?: (itemId: number) => void;
 }
 
 const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => {
@@ -34,12 +34,16 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items, apiUrl, onItemDeleted }) => 
                 <Card.Text>{item.description}</Card.Text>
                 <Card.Text>Price: {item.price} NOK</Card.Text>
                 <div className="mt-auto d-flex justify-content-between">
-                  <Button href={`/items/update/${item.itemId}`} variant="primary">
-                    Update
-                  </Button>
-                  <Button variant="danger" onClick={(event) => onItemDeleted(item.itemId!)}>
-                    Delete
-                  </Button>
+                  {onItemDeleted && (
+                    <>
+                      <Button href={`/items/update/${item.itemId}`} variant="primary">
+                        Update
+                      </Button>
+                      <Button variant="danger" onClick={() => onItemDeleted(item.itemId!)}>
+                        Delete
+                      </Button>
+                    </>
+                  )}
                 </div>
               </Card.Body>
             </Card>
