@@ -75,8 +75,9 @@ public class ItemAPIController : ControllerBase  // ControllerBase is sufficient
             _logger.LogWarning("[ItemAPIController] Item not found for the ItemId {ItemId:0000}", id);
             return NotFound("Item not found for the ItemId");
         }
-        return Ok(item);   
+        return Ok(item);
     }
+    
     [Authorize]
     [HttpPut("update/{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] ItemDto itemDto)
